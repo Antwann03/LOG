@@ -11,7 +11,7 @@ This repository contains the project files for **LOG (Lethal Offensive Gear)**, 
 
 # Description
 ---
-LOG is an ESP32-WROOM-32E–based robotic system featuring four DC motor gearboxes, motor drivers, regulated power delivery, and a custom-designed Fusion 360 chassis. The project includes firmware, VS Code configuration files, hardware documentation, and mechanical design resources. Detailed component specifications are provided in the hardware table below.
+LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gearboxes, motor drivers, regulated power delivery, and a custom-designed Fusion 360 chassis. The project includes firmware, VS Code configuration files, hardware documentation, and mechanical design resources. Detailed component specifications are provided in the hardware table below.
 
 # Block Diagram
 ---
@@ -32,4 +32,36 @@ LOG is an ESP32-WROOM-32E–based robotic system featuring four DC motor gearbox
 
 # CAD & 3D Printed Model
 ---
-*(Add images or description here)*
+
+<div align="center">
+  <img src="LOG_Photos/LOG_TOP_Model.png" width="600">
+  <p><em>Top view of the chassis showing motor placement</em></p>
+</div>
+
+<div align="center">
+  <img src="LOG_Photos/LOG_Model1.png" ">
+  <p><em>Rear view of the chassis with motors installed, showing gear alignment</em></p>
+</div>
+
+<div align="center">
+  <img src="LOG_Photos/LOG_Model2.png">
+  <p><em>Front view of the chassis with motors installed, highlighting wheel mounts</em></p>
+</div>
+
+<div align="center">
+  <img src="LOG_Photos/LOG_Model3.png">
+  <p><em>Front view of the chassis without motors, showing empty mount positions</em></p>
+</div>
+
+<div align="center">
+  <img src="LOG_Photos/LOG_Model4.png">
+  <p><em>Rear view of the chassis without motors, showing open gear compartments</em></p>
+</div>
+
+<h2>Fusion 360 Timelapse</h2>
+<hr>
+<div align="center">
+  <img src="LOG_Photos/Fusion360_Timelapse.gif" width="900">
+  <p><em>Timelapse of the chassis design in Fusion 360, showing the build process</em></p>
+</div>
+
