@@ -21,7 +21,7 @@
 
 <h1>Components Used</h1>
 <hr><p>
-
+<u1>![LOG Block Diagram](LOG_BlockDiagram.png)</u1>
 
 |         Description                   | Quantity          |    Manufacturer   |    Price ($)       |    Link       |
 |         :-------------:                 |:-------------:    | :-----:            |    :-----:          |    :-----:         |
