@@ -23,7 +23,7 @@ LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gea
 |------------|----------|--------------|-----------|------|
 | ESP32-WROOM-32E 4MB Flash | 1 | Espressif Systems | 10.00 per unit | [Product Link](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32E/12091810) |
 | Micro:Bit USB Cable 300mm Black | 1 | SparkFun Electronics | 3.67 per unit | [Product Link](https://www.digikey.com/en/products/detail/sparkfun-electronics/CAB-24508/22321088) |
-| TB6612FNG Motor Driver | 2 | SparkFun Electronics | 14.50 per unit | [Product Link](https://www.digikey.com/en/products/detail/sparkfun-electronics/14450/7915576) |
+| TB6612FNG Motor Driver | 3 | SparkFun Electronics | 14.50 per unit | [Product Link](https://www.digikey.com/en/products/detail/sparkfun-electronics/14450/7915576) |
 | DC Gearbox Motor “TT Motor” 200RPM 3–6V | 4 | Adafruit | 2.95 per unit | [Product Link](https://www.adafruit.com/product/3777) |
 | TT Motor Wheels (Orange/Clear) | 4 | Adafruit | 1.50 per unit | [Product Link](https://www.adafruit.com/product/3766#description) |
 | DC Buck Converter | 10 | SparkFun | 12.99 per pack | [Product Link](https://www.amazon.com/dp/B07VVXF7YX) |
