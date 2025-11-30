@@ -4,7 +4,7 @@ This repository contains the project files for **LOG (Lethal Offensive Gear)**, 
 
 **Performed By:**
 - Antonio Anzora Jr  
-- Vartan Charkyan  
+- Vartan Chakryan  
 
 **Professor:**
 - Aaron Nanas  
@@ -21,7 +21,7 @@ LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gea
 ---
 | Description | Quantity | Manufacturer | Price ($) | Link |
 |------------|----------|--------------|-----------|------|
-| ESP32-WROOM-32E 4MB Flash | 1 | Espressif Systems | 10.00 per unit | [Product Link](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32E/12091810) |
+| ESP32-WROOM-32E 4MB Flash | 2 | Espressif Systems | 10.00 per unit | [Product Link](https://www.digikey.com/en/products/detail/espressif-systems/ESP32-DEVKITC-32E/12091810) |
 | Micro:Bit USB Cable 300mm Black | 1 | SparkFun Electronics | 3.67 per unit | [Product Link](https://www.digikey.com/en/products/detail/sparkfun-electronics/CAB-24508/22321088) |
 | TB6612FNG Motor Driver | 3 | SparkFun Electronics | 14.50 per unit | [Product Link](https://www.digikey.com/en/products/detail/sparkfun-electronics/14450/7915576) |
 | DC Gearbox Motor “TT Motor” 200RPM 3–6V | 4 | Adafruit | 2.95 per unit | [Product Link](https://www.adafruit.com/product/3777) |
@@ -32,7 +32,6 @@ LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gea
 
 # CAD & 3D Printed Model
 ---
-
 <div align="center">
   <img src="LOG_Photos/LOG_TOP_Model.png" width="600">
   <p><em>Top view of the chassis showing motor placement</em></p>
@@ -65,3 +64,17 @@ LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gea
   <p><em>Timelapse of the chassis design in Fusion 360, showing the build process</em></p>
 </div>
 
+## Getting Started with ESP32 & PlatformIO
+
+This project uses the **PlatformIO extension in VS Code** with the **Arduino C++ framework** for ESP32 development. Below are the key steps and commands used during development:
+
+### Setup ESP32 Environment
+- Install PlatformIO in VS Code.
+- Connect the ESP32 via USB.
+- Select the correct board: `rymcu-esp32-devkitc`.
+
+### Build & Upload Firmware
+```bash
+pio run --target upload      # Compile and upload to ESP32
+pio run --target clean       # Clean build artifacts
+pio run --target build       # Compile only, no upload
