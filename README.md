@@ -15,7 +15,7 @@ LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gea
 
 # Block Diagram
 ---
-![LOG Block Diagram](LOG_BlockDiagram.png)
+![LOG Block Diagram](LOG_Photos/LOG_Block_Diagram.png)
 
 # Components Used
 ---
@@ -30,38 +30,41 @@ LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gea
 | Tenergy 7.4V Li-Ion 2200mAh Battery | 1 | Tenergy | 16.99 per unit | [Product Link](https://www.amazon.com/dp/B002Y2LJW0) |
 | Tenergy 7.4V Battery Charger | 1 | Tenergy | 23.99 per unit | [Product Link](https://www.amazon.com/dp/B007MD54NQ) |
 
-# CAD & 3D Printed Model
+# CAD & 3D Printed Models
 ---
+
+### Design 1 – Original Chassis
 <div align="center">
   <img src="LOG_Photos/LOG_TOP_Model.png" width="600">
-  <p><em>Top view of the chassis showing motor placement</em></p>
-</div>
-
-<div align="center">
-  <img src="LOG_Photos/LOG_Model1.png" ">
-  <p><em>Rear view of the chassis with motors installed, showing gear alignment</em></p>
+  <p><em>Top view of the original chassis showing initial motor placement.</em></p>
 </div>
 
 <div align="center">
   <img src="LOG_Photos/LOG_Model2.png">
-  <p><em>Front view of the chassis with motors installed, highlighting wheel mounts</em></p>
+  <p><em>Front view of the original chassis with motors installed, highlighting initial gear alignment.</em></p>
+</div>
+
+### Design 2 – Mesh Chassis (Optimized)
+<div align="center">
+  <img src="LOG_Photos/LOG_MESH_Model.png">
+  <p><em>Front view of the optimized mesh chassis without motors,showing empty mount positions for reference.</em></p>
 </div>
 
 <div align="center">
-  <img src="LOG_Photos/LOG_Model3.png">
-  <p><em>Front view of the chassis without motors, showing empty mount positions</em></p>
+  <img src="LOG_Photos/LOG_MESH_Model2.png">
+  <p><em>Rear view of the optimized mesh chassis without motors, showing empty mount positions for reference.</em></p>
 </div>
 
+### Design 1 – Fusion 360 Timelapse
 <div align="center">
-  <img src="LOG_Photos/LOG_Model4.png">
-  <p><em>Rear view of the chassis without motors, showing open gear compartments</em></p>
+  <img src="LOG_Photos/Adobe Express - LOG_Timelapse2.gif" width="900">
+  <p><em>Timelapse of the original chassis design process in Fusion 360.</em></p>
 </div>
 
-<h2>Fusion 360 Timelapse</h2>
-<hr>
+### Design 2 – Fusion 360 Timelapse
 <div align="center">
-  <img src="LOG_Photos/Fusion360_Timelapse.gif" width="900">
-  <p><em>Timelapse of the chassis design in Fusion 360, showing the build process</em></p>
+  <img src="LOG_Photos/Adobe Express - LOG_TimeLapse_main.gif" width="900">
+  <p><em>Timelapse of the optimized mesh chassis design process in Fusion 360.</em></p>
 </div>
 
 ## Getting Started with ESP32 & PlatformIO
