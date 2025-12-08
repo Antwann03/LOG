@@ -139,115 +139,111 @@ void AdjustMotorD_Speed() {
 
 void Motor_Forward(int run)
 {
-  // MOTOR A
+  //Enabling Motor Driver for Forward
+  digitalWrite(MotorDriver1_STBY, HIGH);
+  digitalWrite(MotorDriver2_STBY, HIGH);
+  // MOTOR A (Left Front Wheel)
   digitalWrite(PIN1_AIN1, HIGH);
   digitalWrite(PIN1_AIN2, LOW);
   ledcWrite(PWMA1_CHANNEL, run);
-  // MOTOR B
+  // MOTOR B (Right Front Wheel)
   digitalWrite(PIN1_BIN1, HIGH);
   digitalWrite(PIN1_BIN2, LOW);
   ledcWrite(PWMB1_CHANNEL, run);
-  // MOTOR C
+  // MOTOR C (Left Rear Wheel)
   digitalWrite(PIN2_AIN1, HIGH);
   digitalWrite(PIN2_AIN2, LOW);
   ledcWrite(PWMA2_CHANNEL, run);
-  // MOTOR D
+  // MOTOR D (Right Rear Wheel)
   digitalWrite(PIN2_BIN1, HIGH);
   digitalWrite(PIN2_BIN2, LOW);
   ledcWrite(PWMB2_CHANNEL, run);
-  
 }
-
 void Motor_Backward(int run)
 {
-  //  MOTOR A
+  //Enabling Motor Drivers for Backward
+  digitalWrite(MotorDriver1_STBY, HIGH);
+  digitalWrite(MotorDriver2_STBY, HIGH);
+  // MOTOR A (Left Front Wheel)
   digitalWrite(PIN1_AIN1, LOW);
   digitalWrite(PIN1_AIN2, HIGH);
   ledcWrite(PWMA1_CHANNEL, run);
-
-  //  MOTOR B
+  // MOTOR B (Right Front Wheel)
   digitalWrite(PIN1_BIN1, LOW);
   digitalWrite(PIN1_BIN2, HIGH);
   ledcWrite(PWMB1_CHANNEL, run);
-
-  //  MOTOR C
+  // MOTOR C (Left Rear Wheel)
   digitalWrite(PIN2_AIN1, LOW);
   digitalWrite(PIN2_AIN2, HIGH);
   ledcWrite(PWMA2_CHANNEL, run);
-
-  //  MOTOR D
+  // MOTOR D (Right Rear Wheel)
   digitalWrite(PIN2_BIN1, LOW);
   digitalWrite(PIN2_BIN2, HIGH);
   ledcWrite(PWMB2_CHANNEL, run);
 }
-
 void Motor_Left(int run)
 {
-  // LEFT side backward
+  //Enabling Motor Drivers for Left
+  digitalWrite(MotorDriver1_STBY, HIGH);
+  digitalWrite(MotorDriver2_STBY, HIGH);
+  // MOTOR A (Left Front Wheel)
   digitalWrite(PIN1_AIN1, LOW);
   digitalWrite(PIN1_AIN2, HIGH);
   ledcWrite(PWMA1_CHANNEL, run);
-
+  // MOTOR C (Left Rear Wheel)
   digitalWrite(PIN2_AIN1, LOW);
   digitalWrite(PIN2_AIN2, HIGH);
   ledcWrite(PWMA2_CHANNEL, run);
-
-  // RIGHT side forward
+  // MOTOR B (Right Front Wheel)
   digitalWrite(PIN1_BIN1, HIGH);
   digitalWrite(PIN1_BIN2, LOW);
   ledcWrite(PWMB1_CHANNEL, run);
-
+  // MOTOR D (Right Rear Wheel)
   digitalWrite(PIN2_BIN1, HIGH);
   digitalWrite(PIN2_BIN2, LOW);
   ledcWrite(PWMB2_CHANNEL, run);
 }
-
-
 void Motor_Right(int run)
 {
-  // LEFT side forward
+  //Enabling Motor Drivers for Right
+  digitalWrite(MotorDriver1_STBY, HIGH);
+  digitalWrite(MotorDriver2_STBY, HIGH);
+  // MOTOR A (Left Front Wheel)
   digitalWrite(PIN1_AIN1, HIGH);
   digitalWrite(PIN1_AIN2, LOW);
   ledcWrite(PWMA1_CHANNEL, run);
-
+  // MOTOR C (Left Rear Wheel)
   digitalWrite(PIN2_AIN1, HIGH);
   digitalWrite(PIN2_AIN2, LOW);
   ledcWrite(PWMA2_CHANNEL, run);
-
-  // RIGHT side backward
+  // MOTOR B (Right Front Wheel)
   digitalWrite(PIN1_BIN1, LOW);
   digitalWrite(PIN1_BIN2, HIGH);
   ledcWrite(PWMB1_CHANNEL, run);
-
+  // MOTOR D (Right Rear Wheel)
   digitalWrite(PIN2_BIN1, LOW);
   digitalWrite(PIN2_BIN2, HIGH);
   ledcWrite(PWMB2_CHANNEL, run);
 }
-
 void Motor_Stop()
 {
+  // Enabling Motor Drivers for Stop
+  digitalWrite(MotorDriver1_STBY, HIGH);
+  digitalWrite(MotorDriver2_STBY, HIGH);
   // MOTOR A
   digitalWrite(PIN1_AIN1, LOW);
   digitalWrite(PIN1_AIN2, LOW);
   ledcWrite(PWMA1_CHANNEL, 0);
-
   // MOTOR B
   digitalWrite(PIN1_BIN1, LOW);
   digitalWrite(PIN1_BIN2, LOW);
   ledcWrite(PWMB1_CHANNEL, 0);
-
   // MOTOR C
   digitalWrite(PIN2_AIN1, LOW);
   digitalWrite(PIN2_AIN2, LOW);
   ledcWrite(PWMA2_CHANNEL, 0);
-
   // MOTOR D
   digitalWrite(PIN2_BIN1, LOW);
   digitalWrite(PIN2_BIN2, LOW);
   ledcWrite(PWMB2_CHANNEL, 0);
-
-  // STANDBY PINS OFF (optional)
-  digitalWrite(MotorDriver1_STBY, LOW);
-  digitalWrite(MotorDriver2_STBY, LOW);
 }
-

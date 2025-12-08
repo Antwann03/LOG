@@ -2,6 +2,8 @@
 #include <Arduino.h>
 #include <WebServer.h>
 #include <WiFi.h>
+#include "FS.h"
+#include "SPIFFS.h"
 
 /*
 *
@@ -30,7 +32,7 @@ const char WebPage[] PROGMEM = R"rawliteral(
         }
         body
         {
-            background-image:url("9895435.png");
+            background-image: url("9895435.png");
             background-size:cover;
             background-position:center;
             background-attachment:fixed;
@@ -70,18 +72,17 @@ const char WebPage[] PROGMEM = R"rawliteral(
 <body>
 
     <h1>LOG Robot Controller</h1>
-    <img src="csun_logo.png">
-
+    <img src="/csun_logo.png" alt="CSUN Logo">
     <div class="row">
-        <button onclick="sendCmd('forward')">Forward</button>
+        <button onclick="sendCmd('f')">Forward</button>
     </div>
     <div class="row">
-        <button onclick="sendCmd('left')">Left</button>
-        <button onclick="sendCmd('stop')">Stop</button>
-        <button onclick="sendCmd('right')">Right</button>
+        <button onclick="sendCmd('l')">Left</button>
+        <button onclick="sendCmd('s')">Stop</button>
+        <button onclick="sendCmd('r')">Right</button>
     </div>
     <div class="row">
-        <button onclick="sendCmd('back')">Backward</button>
+        <button onclick="sendCmd('b')">Backward</button>
     </div>
 
     <script>
@@ -99,33 +100,47 @@ void loadWEB_UI_LOG()
 {
   server.send_P(200, "text/html", WebPage);
 }
+
 void control_LOG_Robot()
 {
   if(server.hasArg("move"))
   {
     String cmd = server.arg("move");
-
-    if (cmd == "forward")
+    char ControlIt = cmd.charAt(0);
+    switch(ControlIt)
     {
-      Motor_Forward(180);
+      case 'f':
+      {
+        Motor_Forward(180);
+        break;
+      }
+      case 'b':
+      {
+        Motor_Backward(180);
+        break;
+      }
+      case 'l':
+      {
+        Motor_Left(180);
+        break;
+      }
+      case 'r':
+      {
+        Motor_Right(180);
+        break;
+      }
+      case 's':
+      {
+        Motor_Stop();
+        break;
+      }
+      default:
+      {
+        Serial.println("Unknown command");
+        break;
+      }
     }
-    else if (cmd == "backward")
-    {
-      Motor_Backward(180);
-    }
-    else if (cmd == "left")
-    {
-      Motor_Left(180);
-    }
-    else if(cmd == "right")
-    {
-      Motor_Right(180);
-    }
-    else if (cmd == "stop")
-    {
-      Motor_Stop();
-    }
-    server.send(200,"text/plain", "OK");
+    server.send(200, "text/plain", "OK");
   }
 }
 
@@ -139,6 +154,7 @@ void setup()
   MotorC();
   MotorD();
 
+  
   // ---- ESP32 ACCESS POINT MODE ----
   const char* ssid = "LOG";
   const char* password = "ECE528_LOG";
@@ -150,6 +166,12 @@ void setup()
   Serial.print("IP Address: ");
   Serial.println(WiFi.softAPIP());       // Usually 192.168.4.1
 
+  if (!SPIFFS.begin(true))
+  {
+    Serial.println("SPIFFS Mount Failed");
+  }
+  server.serveStatic("/csun_logo.png", SPIFFS, "/csun_logo.png");
+  server.serveStatic("/9895435.png", SPIFFS, "/9895435.png");
   // ---- Web Routes ----
   server.on("/", loadWEB_UI_LOG);
   server.on("/cmd", control_LOG_Robot);
