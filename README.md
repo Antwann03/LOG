@@ -67,6 +67,9 @@ LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gea
   <p><em>Timelapse of the optimized mesh chassis design process in Fusion 360.</em></p>
 </div>
 
+## Why We Use Base64 Images
+We convert PNG images, such as the CSUN logo and background, into Base64 so they can be embedded directly into the HTML served by the ESP32. This ensures the webpage loads images correctly without external files and works around the ESP32's limited file handling capabilities.
+
 ## Getting Started with ESP32 & PlatformIO
 
 This project uses the **PlatformIO extension in VS Code** with the **Arduino C++ framework** for ESP32 development. Below are the key steps and commands used during development:
