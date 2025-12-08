@@ -47,7 +47,7 @@ LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gea
 ### Design 2 – Mesh Chassis (Optimized)
 <div align="center">
   <img src="LOG_Photos/LOG_MESH_Model.png">
-  <p><em>Front view of the optimized mesh chassis without motors,showing empty mount positions for reference.</em></p>
+  <p><em>Front view of the optimized mesh chassis without motors, showing empty mount positions for reference.</em></p>
 </div>
 
 <div align="center">
@@ -67,12 +67,24 @@ LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gea
   <p><em>Timelapse of the optimized mesh chassis design process in Fusion 360.</em></p>
 </div>
 
-## Why We Use Base64 Images
-We convert PNG images, such as the CSUN logo and background, into Base64 so they can be embedded directly into the HTML served by the ESP32. This ensures the webpage loads images correctly without external files and works around the ESP32's limited file handling capabilities.
+## Uploading the File System (SPIFFS) to the ESP32
+To display the CSUN logo and the custom background image on the web interface, the image files were added to the ESP32’s SPIFFS file system. The file system image was then uploaded to the ESP32 using PlatformIO’s “Upload File System Image” tool. This ensures that the web server can load and display the assets locally.
 
-## Getting Started with ESP32 & PlatformIO
-
-This project uses the **PlatformIO extension in VS Code** with the **Arduino C++ framework** for ESP32 development. Below are the key steps and commands used during development:
+## Flow Summary (How to Use the System)
+1. Upload the main ESP32 code using USB through PlatformIO.  
+2. Disconnect the USB and power the ESP32 using the 5V output from the DC-DC converter.  
+3. Once powered, the ESP32 creates its own Wi-Fi network.  
+4. On your device (Laptop, iOS, Android, etc.):  
+   - Open Settings → Wi-Fi 
+   - Look for a network named `LOG`
+   - Enter the provided password  
+5. After connecting to the `LOG` network, open a web browser and go to:  
+   http://192.168.4.1  
+6. The ESP32 Web UI will load.  
+7. Press the control buttons (Forward, Left, Right, Backward, Stop) to operate the robot in real time.  
+   - Touchscreen devices (phones/tablets/laptops) provide the most intuitive control experience.
+## Development Environment
+This project uses the PlatformIO extension in VS Code with the Arduino C++ framework for ESP32 development. Below are the key steps and commands used during development:
 
 ### Setup ESP32 Environment
 - Install PlatformIO in VS Code.
@@ -83,4 +95,5 @@ This project uses the **PlatformIO extension in VS Code** with the **Arduino C++
 ```bash
 pio run --target upload      # Compile and upload to ESP32
 pio run --target clean       # Clean build artifacts
-pio run --target build       # Compile only, no upload
+pio run --target build       # Compile only, no upload'
+
