@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <title>ESP32 Robot Control</title>
@@ -73,6 +73,192 @@
                 .catch(err => console.log("Command failed", err));
         }
     </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ESP32 Robot Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --btn-bg: rgba(255, 255, 255, 0.9);
+            --btn-bg-active: #e53935;
+            --btn-bg-hover: #ffcdd2;
+            --panel-bg: rgba(255, 255, 255, 0.85);
+            --text-dark: #222;
+            --accent: #b71c1c;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url("9895435.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: var(--panel-bg);
+            padding: 25px 35px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 420px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* CAMERA FEED */
+        .camera-box {
+            margin-bottom: 20px;
+        }
+
+        .camera-box h2 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+            color: var(--accent);
+        }
+
+        #camFeed {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+        }
+
+        h1 {
+            color: var(--accent);
+            margin-bottom: 5px;
+            font-size: 26px;
+        }
+
+        .row {
+            margin: 12px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            width: 120px;
+            height: 60px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            background: var(--btn-bg);
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.15s ease;
+        }
+
+        button:hover {
+            background: var(--btn-bg-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        button.active {
+            background: var(--btn-bg-active);
+            color: white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        }
+
+        .status, .robot-state {
+            margin-top: 12px;
+            font-size: 15px;
+            color: var(--text-dark);
+        }
+
+        .robot-state span {
+            font-weight: bold;
+            color: var(--accent);
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+
+    <!-- CAMERA FEED SECTION -->
+    <div class="camera-box">
+        <h2>Live Camera</h2>
+        <img id="camFeed" src="" alt="Camera Feed">
+    </div>
+
+    <h1>LOG Robot Controller</h1>
+    <img src="csun_logo.png" alt="CSUN Logo" style="width:120px; margin-bottom:15px;">
+
+    <div class="row">
+        <button data-cmd="forward">Forward</button>
+    </div>
+
+    <div class="row">
+        <button data-cmd="left">Left</button>
+        <button data-cmd="stop">Stop</button>
+        <button data-cmd="right">Right</button>
+    </div>
+
+    <div class="row">
+        <button data-cmd="back">Backward</button>
+    </div>
+
+    <div class="status" id="status">Ready.</div>
+
+    <div class="robot-state" id="robotState">
+        Robot currently: <span>Stopped</span>
+    </div>
+
+</div>
+
+<script>
+    const statusEl = document.getElementById("status");
+    const robotStateEl = document.getElementById("robotState").querySelector("span");
+    const buttons = document.querySelectorAll("button[data-cmd]");
+
+    function setActiveButton(cmd) {
+        buttons.forEach(btn => {
+            if (btn.dataset.cmd === cmd) btn.classList.add("active");
+            else btn.classList.remove("active");
+        });
+    }
+
+    async function sendCmd(cmd) {
+        setActiveButton(cmd);
+        statusEl.innerHTML = `Sending: <b>${cmd}</b>...`;
+
+        try {
+            const response = await fetch(`/cmd?move=${cmd}`);
+            if (!response.ok) throw new Error("HTTP Error");
+
+            statusEl.innerHTML = `Sent: <b>${cmd}</b>`;
+            robotStateEl.innerHTML = cmd.charAt(0).toUpperCase() + cmd.slice(1);
+        } catch (err) {
+            statusEl.innerHTML = `<span style="color:red;">Failed to send ${cmd}</span>`;
+        }
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => sendCmd(btn.dataset.cmd));
+    });
+</script>
 
 </body>
 </html>

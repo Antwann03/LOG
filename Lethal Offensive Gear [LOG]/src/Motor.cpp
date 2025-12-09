@@ -230,19 +230,19 @@ void Motor_Stop()
   // Enabling Motor Drivers for Stop
   digitalWrite(MotorDriver1_STBY, HIGH);
   digitalWrite(MotorDriver2_STBY, HIGH);
-  // MOTOR A
+  // MOTOR A (Left Front Wheel)
   digitalWrite(PIN1_AIN1, LOW);
   digitalWrite(PIN1_AIN2, LOW);
   ledcWrite(PWMA1_CHANNEL, 0);
-  // MOTOR B
+  // MOTOR B (Right Front Wheel)
   digitalWrite(PIN1_BIN1, LOW);
   digitalWrite(PIN1_BIN2, LOW);
   ledcWrite(PWMB1_CHANNEL, 0);
-  // MOTOR C
+  // MOTOR C (Left Rear Wheel)
   digitalWrite(PIN2_AIN1, LOW);
   digitalWrite(PIN2_AIN2, LOW);
   ledcWrite(PWMA2_CHANNEL, 0);
-  // MOTOR D
+  // MOTOR D (Right Rear Wheel)
   digitalWrite(PIN2_BIN1, LOW);
   digitalWrite(PIN2_BIN2, LOW);
   ledcWrite(PWMB2_CHANNEL, 0);
