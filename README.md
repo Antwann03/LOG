@@ -13,6 +13,15 @@ This repository contains the project files for **LOG (Lethal Offensive Gear)**, 
 ---
 LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gearboxes, motor drivers, regulated power delivery, and a custom-designed Fusion 360 chassis. The project includes firmware, VS Code configuration files, hardware documentation, and mechanical design resources. Detailed component specifications are provided in the hardware table below.
 
+# Results and Video Demonstration Links
+---
+The L.O.G. robot successfully achieves its intended functionality. The HTTP local server allows users to select commands such as forward, backwards, left, right, and stop, providing real-time control of the robot. Using a touchscreen laptop makes the interaction even more intuitive compared to mouse clicks, enhancing the user experience. 
+- [Video FarUp Demo](https://youtube.com/shorts/Mxwh_CG7am0?feature=share)
+- [Google Drive Demos](https://drive.google.com/drive/folders/1Z1n1CEIT03VmvK7F4xq60eIc1RUjuvVK?usp=sharing)
+- [Google Drive Photos of Chassis & WebSite on iOS Phone](https://drive.google.com/drive/folders/1Z1n1CEIT03VmvK7F4xq60eIc1RUjuvVK?usp=sharing)
+# Background and Methodology
+---
+The L.O.G. Project utilizes several embedded system concepts. Specifically, the ESP32-WRROM-32E microcontroller is used to host a Wi-Fi HTTP server, enabling control of the robot’s actions. This feature allows real-time user interaction through a web-based interface. By leveraging the microcontroller’s networking capabilities and integrating motor driver with DC motors, we were able to design a system that responds instantly to user commands.
 # Block Diagram
 ---
 ![LOG Block Diagram](LOG_Photos/LOG_Block_Diagram.png)
@@ -29,6 +38,28 @@ LOG is an ESP32–WROOM–32E–based robotic system featuring four DC motor gea
 | DC Buck Converter | 10 | SparkFun | 12.99 per pack | [Product Link](https://www.amazon.com/dp/B07VVXF7YX) |
 | Tenergy 7.4V Li-Ion 2200mAh Battery | 1 | Tenergy | 16.99 per unit | [Product Link](https://www.amazon.com/dp/B002Y2LJW0) |
 | Tenergy 7.4V Battery Charger | 1 | Tenergy | 23.99 per unit | [Product Link](https://www.amazon.com/dp/B007MD54NQ) |
+
+# Pinout Table
+---
+| ESP32 Pin | Connected To | Motor Driver | Motor |
+|-----------|--------------|--------------|--------|
+| GPIO 22   | AIN1         | TB6612FNG #1 | Motor A |
+| GPIO 21   | AIN2         | TB6612FNG #1 | Motor A |
+| GPIO 23   | PWMA         | TB6612FNG #1 | Motor A |
+| GPIO 19   | BIN1         | TB6612FNG #1 | Motor B |
+| GPIO 18   | BIN2         | TB6612FNG #1 | Motor B |
+| GPIO 5    | PWMB         | TB6612FNG #1 | Motor B |
+| GPIO 32   | STBY         | TB6612FNG #1 | — |
+| GPIO 2    | AIN1         | TB6612FNG #2 | Motor C |
+| GPIO 16   | AIN2         | TB6612FNG #2 | Motor C |
+| GPIO 17   | PWMA         | TB6612FNG #2 | Motor C |
+| GPIO 25   | BIN1         | TB6612FNG #2 | Motor D |
+| GPIO 26   | BIN2         | TB6612FNG #2 | Motor D |
+| GPIO 27   | PWMB         | TB6612FNG #2 | Motor D |
+| GPIO 4    | STBY         | TB6612FNG #2 | — |
+
+
+
 
 # CAD & 3D Printed Models
 ---
