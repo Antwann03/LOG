@@ -21,7 +21,7 @@ The L.O.G. robot successfully achieves its intended functionality. The HTTP loca
 - [Google Drive Photos of Chassis & WebSite on iOS Phone](https://drive.google.com/drive/folders/1Z1n1CEIT03VmvK7F4xq60eIc1RUjuvVK?usp=sharing)
 # Background and Methodology
 ---
-The L.O.G. Project utilizes several embedded system concepts. Specifically, the ESP32-WRROM-32E microcontroller is used to host a Wi-Fi HTTP server, enabling control of the robot’s actions. This feature allows real-time user interaction through a web-based interface. By leveraging the microcontroller’s networking capabilities and integrating a motor driver with DC motors, we were able to design a system that responds instantly to user commands.
+The L.O.G. Project utilizes several embedded system concepts. Specifically, the ESP32-WRROM-32E microcontroller is used to host a Wi-Fi HTTP server, enabling control of the robot’s actions. This feature allows real-time user interaction through a web-based interface. By leveraging the microcontroller’s networking capabilities and integrating a motor driver with DC motors, we designed a system that responds instantly to user commands.
 # Block Diagram
 ---
 ![LOG Block Diagram](LOG_Photos/LOG_Block_Diagram.png)
@@ -122,6 +122,18 @@ PWM (Pulse Width Modulation):
   <img src="LOG_Photos/Adobe Express - LOG_TimeLapse_main.gif" width="900">
   <p><em>Timelapse of the optimized mesh chassis design process in Fusion 360.</em></p>
 </div>
+
+# Website Photos
+---
+### Website on iOS
+<div align="center">
+  <img src="LOG_Photos/IMG_4162.png">
+  <p><em>Website on iOS</em></p>
+</div>
+
+### Website on Laptop
+
+### Website Comparison, Upgrades
 
 ## Uploading the File System (SPIFFS) to the ESP32
 To display the CSUN logo and the custom background image on the web interface, the image files were added to the ESP32’s SPIFFS file system. The file system image was then uploaded to the ESP32 using PlatformIO’s “Upload File System Image” tool. This ensures that the web server can load and display the assets locally.
