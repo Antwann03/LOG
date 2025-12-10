@@ -91,12 +91,12 @@ PWM (Pulse Width Modulation):
 
 ### Design 1 – Original Chassis
 <div align="center">
-  <img src="LOG_Photos/LOG_TOP_Model.png" width="600">
+  <img src="LOG_Photos/LOG_TOP_Model.png" width="750">
   <p><em>Top view of the original chassis showing initial motor placement.</em></p>
 </div>
 
 <div align="center">
-  <img src="LOG_Photos/LOG_Model2.png">
+  <img src="LOG_Photos/LOG_Model2.png" width = "750">
   <p><em>Front view of the original chassis with motors installed, highlighting initial gear alignment.</em></p>
 </div>
 
@@ -127,13 +127,21 @@ PWM (Pulse Width Modulation):
 ---
 ### Website on iOS
 <div align="center">
-  <img src="LOG_Photos/IMG_4162.png">
+  <img src="LOG_Photos/IMG_4162.png" width="300">
   <p><em>Website on iOS</em></p>
 </div>
 
 ### Website on Laptop
+<div align="center">
+  <img src="LOG_Photos/WebsiteFullyUsed.png" width = "750">
+  <p><em> Upgraded Website </em></p>
+</div>
 
-### Website Comparison, Upgrades
+### Website Comparison
+<div align="center">
+  <img src="LOG_Photos/WebsiteComparison.png">
+  <p><em>Old Website Vs New Website</em></p>
+</div>
 
 ## Uploading the File System (SPIFFS) to the ESP32
 To display the CSUN logo and the custom background image on the web interface, the image files were added to the ESP32’s SPIFFS file system. The file system image was then uploaded to the ESP32 using PlatformIO’s “Upload File System Image” tool. This ensures that the web server can load and display the assets locally.
