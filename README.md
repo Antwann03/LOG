@@ -21,7 +21,7 @@ The L.O.G. robot successfully achieves its intended functionality. The HTTP loca
 - [Google Drive Photos of Chassis & WebSite on iOS Phone](https://drive.google.com/drive/folders/1Z1n1CEIT03VmvK7F4xq60eIc1RUjuvVK?usp=sharing)
 # Background and Methodology
 ---
-The L.O.G. Project utilizes several embedded system concepts. Specifically, the ESP32-WRROM-32E microcontroller is used to host a Wi-Fi HTTP server, enabling control of the robot’s actions. This feature allows real-time user interaction through a web-based interface. By leveraging the microcontroller’s networking capabilities and integrating motor driver with DC motors, we were able to design a system that responds instantly to user commands.
+The L.O.G. Project utilizes several embedded system concepts. Specifically, the ESP32-WRROM-32E microcontroller is used to host a Wi-Fi HTTP server, enabling control of the robot’s actions. This feature allows real-time user interaction through a web-based interface. By leveraging the microcontroller’s networking capabilities and integrating a motor driver with DC motors, we were able to design a system that responds instantly to user commands.
 # Block Diagram
 ---
 ![LOG Block Diagram](LOG_Photos/LOG_Block_Diagram.png)
@@ -35,7 +35,7 @@ The L.O.G. Project utilizes several embedded system concepts. Specifically, the 
 | TB6612FNG Motor Driver | 3 | SparkFun Electronics | 14.50 per unit | [Product Link](https://www.digikey.com/en/products/detail/sparkfun-electronics/14450/7915576) |
 | DC Gearbox Motor “TT Motor” 200RPM 3–6V | 4 | Adafruit | 2.95 per unit | [Product Link](https://www.adafruit.com/product/3777) |
 | TT Motor Wheels (Orange/Clear) | 4 | Adafruit | 1.50 per unit | [Product Link](https://www.adafruit.com/product/3766#description) |
-| DC Buck Converter | 10 | SparkFun | 12.99 per pack | [Product Link](https://www.amazon.com/dp/B07VVXF7YX) |
+| LM2596 DC Buck Converter | 10 | SparkFun | 12.99 per pack | [Product Link](https://www.amazon.com/dp/B07VVXF7YX) |
 | Tenergy 7.4V Li-Ion 2200mAh Battery | 1 | Tenergy | 16.99 per unit | [Product Link](https://www.amazon.com/dp/B002Y2LJW0) |
 | Tenergy 7.4V Battery Charger | 1 | Tenergy | 23.99 per unit | [Product Link](https://www.amazon.com/dp/B007MD54NQ) |
 
@@ -58,7 +58,32 @@ The L.O.G. Project utilizes several embedded system concepts. Specifically, the 
 | GPIO 27   | PWMB         | TB6612FNG #2 | Motor D |
 | GPIO 4    | STBY         | TB6612FNG #2 | — |
 
+# ESP32-WROOM-32E Peripherals Used:
+GPIO (General Purpose Input/Output): 
+-	Used for motor directions. Control H-bridge inputs (AIN1, AIN2, BIN1, BIN2, etc.).
+-	Also used for the motor driver STBY pins.
+-	These pin outputs HIGH/LOW logic to set motor direction.
 
+Wi-Fi (SoftAP Mode):
+-	ESP32 creates its own Wi-Fi network
+-	Allows phone/laptop to connect without a router
+-	Serves the robot control webpage
+-	Necessary for wireless control
+
+SPIFFS File System:
+-	Stores images in the webpage, such as csun_logo.png and background image
+-	ESP32 serves these files to the web interface
+-	Needed for hosting User Interface (UI) assets
+
+WebServer Library (HTTP Server):
+-	Handles webpage requests and motor commands
+-	Serves the HTML/CSS interface
+-	Allows real-time robot control via browser
+
+PWM (Pulse Width Modulation):
+-	Used for motor speed control
+-	Resolution: 8-bit (0 to 255 levels of speed)
+-	Frequency: 20 kHz (Silent operation)
 
 
 # CAD & 3D Printed Models
