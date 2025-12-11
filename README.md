@@ -37,8 +37,8 @@ The L.O.G. Project utilizes several embedded system concepts. Specifically, the 
 | LM2596 DC Buck Converter | 10 | SparkFun | 12.99 per pack | [Product Link](https://www.amazon.com/dp/B07VVXF7YX) |
 | Tenergy 7.4V Li-Ion 2200mAh Battery | 1 | Tenergy | 16.99 per unit | [Product Link](https://www.amazon.com/dp/B002Y2LJW0) |
 | Tenergy 7.4V Battery Charger | 1 | Tenergy | 23.99 per unit | [Product Link](https://www.amazon.com/dp/B007MD54NQ) |
-| ESP32-CAM Module (AI Thinker) | 1 | AI Thinker | 7.99 per unit | [Product Link](https://www.amazon.com/Hosyond-ESP32-CAM-Bluetooth-Development-Compatible/dp/B09TB1GJ7P/ref=sr_1_4?s=electronics&sr=1-4) |
-| USB-to-TTL Serial Converter (FTDI/CH340) | 1 | Generic | 7.49 per unit | [Product Link](https://www.amazon.com/dp/B00LODGRV8) |
+| ESP32-CAM Module (AI Thinker) | 1 | AI Thinker | 15.99 per unit | [Product Link](https://www.amazon.com/Hosyond-ESP32-CAM-Bluetooth-Development-Compatible/dp/B09TB1GJ7P/ref=sr_1_4?s=electronics&sr=1-4) |
+| USB-to-TTL Serial Converter (FTDI/CH340) | 1 | Generic | 7.39 per unit | [Product Link](https://www.amazon.com/dp/B00LODGRV8) |
 
 
 # Pinout Table
